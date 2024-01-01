@@ -57,10 +57,10 @@ def create_accounts():
         jsonify(message), status.HTTP_201_CREATED, {"Location": location_url}
     )
 
+
 ######################################################################
 # LIST ALL ACCOUNTS
 ######################################################################
-
 @app.route("/accounts", methods=["GET"])
 def list_accounts():
     """
@@ -125,12 +125,6 @@ def delete_accounts(account_id):
     if account:
         account.delete()
     return "", status.HTTP_204_NO_CONTENT
-
-def test_method_not_allowed(self):
-    """It should not allow an illegal method call"""
-    resp = self.client.delete(BASE_URL)
-    self.assertEqual(resp.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
-
 
 ######################################################################
 #  U T I L I T Y   F U N C T I O N S
